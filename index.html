@@ -1,137 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Validate-website by spk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <title>Validate-website by spk</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
+    <header>
+      <div class="inner">
         <h1>Validate-website</h1>
-        <p>Web crawler for checking the validity of your documents.</p>
+        <h2>Web crawler for checking the validity of your documents.</h2>
+        <a href="https://github.com/spk/validate-website" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-        <p class="view"><a href="https://github.com/spk/validate-website">View the Project on GitHub <small>spk/validate-website</small></a></p>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="validate-website" class="anchor" href="#validate-website"><span class="octicon octicon-link"></span></a>validate-website</h1>
 
-
-        <ul>
-          <li><a href="https://github.com/spk/validate-website/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/spk/validate-website/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/spk/validate-website">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>validate-website</h1>
-
-<h1>Description</h1>
+<h2>
+<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h2>
 
 <p>Web crawler for checking the validity of your documents</p>
 
-<h1>INSTALLATION</h1>
+<p><img src="https://raw.github.com/spk/validate-website/master/validate-website.png" alt="validate website"></p>
 
-<h2>Debian</h2>
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-<div class="highlight"><pre>  aptitude install rubygems ruby-dev libxslt-dev libxml2-dev
+<h3>
+<a name="debian" class="anchor" href="#debian"><span class="octicon octicon-link"></span></a>Debian</h3>
+
+<div class="highlight highlight-bash"><pre>  aptitude install ruby-dev libxslt-dev libxml2-dev
 </pre></div>
 
-<h2>RubyGems</h2>
+<h3>
+<a name="rubygems" class="anchor" href="#rubygems"><span class="octicon octicon-link"></span></a>RubyGems</h3>
 
-<div class="highlight"><pre>  gem install validate-website
+<div class="highlight highlight-bash"><pre>  gem install validate-website
 </pre></div>
 
-<h1>SYNOPSIS</h1>
+<h2>
+<a name="synopsis" class="anchor" href="#synopsis"><span class="octicon octicon-link"></span></a>Synopsis</h2>
 
-<div class="highlight"><pre>  validate-website <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight highlight-bash"><pre>  validate-website <span class="o">[</span>OPTIONS<span class="o">]</span>
   validate-website-static <span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
 
-<h1>DESCRIPTION</h1>
+<h2>
+<a name="description-1" class="anchor" href="#description-1"><span class="octicon octicon-link"></span></a>Description</h2>
 
 <p>validate-website is a web crawler for checking the markup validity with XML
-Schema / DTD and not found urls (more info doc/validate-website.txt).</p>
+Schema / DTD and not found urls (more info <a href="https://github.com/spk/validate-website/blob/master/doc/validate-website.adoc">doc/validate-website.adoc</a>).</p>
 
 <p>validate-website-static checks the markup validity of your local documents with
-XML Schema / DTD (more info doc/validate-website-static.txt).</p>
+XML Schema / DTD (more info <a href="https://github.com/spk/validate-website/blob/master/doc/validate-website-static.adoc">doc/validate-website-static.adoc</a>).</p>
 
 <p>HTML5 support with Validator.nu Web Service.</p>
 
-<h1>VALIDATE WEBSITE OPTIONS</h1>
-
-<div class="highlight"><pre>  -s, --site SITE
-      Website to crawl <span class="o">(</span>Default: http://localhost:3000/<span class="o">)</span>
-  -u, --user-agent USERAGENT
-      Change user agent <span class="o">(</span>Default: Anemone/VERSION<span class="o">)</span>
-  -e, --exclude EXCLUDE
-      Url to exclude <span class="o">(</span>ex: redirect|news<span class="o">)</span>
-  -i, --ignore-errors IGNORE
-      Ignore certain validation errors <span class="o">(</span>ex: autocorrect<span class="o">)</span>
-  -f, --file FILE
-      Save not well formed or not found <span class="o">(</span>with -n used<span class="o">)</span> urls
-  -c, --cookies COOKIES
-      Set defaults cookies
-  -m, --<span class="o">[</span>no-<span class="o">]</span>markup-validation
-      Markup validation <span class="o">(</span>Default: <span class="nb">true</span><span class="o">)</span>
-  -n, --not-found
-      Log not found url <span class="o">(</span>Default: <span class="nb">false</span><span class="o">)</span>
-  --<span class="o">[</span>no-<span class="o">]</span>color
-      Show colored output <span class="o">(</span>Default: <span class="nb">true</span><span class="o">)</span>
-  -v, --verbose
-      Show detail of validator errors <span class="o">(</span>Default: <span class="nb">false</span><span class="o">)</span>.
-  -q, --quiet
-      Only report errors <span class="o">(</span>Default: <span class="nb">false</span><span class="o">)</span>.
-  -d, --debug
-      Show anemone log <span class="o">(</span>Default: <span class="nb">false</span><span class="o">)</span>
-  -h, --help
-      Show <span class="nb">help </span>message and exit.
-</pre></div>
-
-<h1>EXIT STATUS</h1>
+<h2>
+<a name="exit-status" class="anchor" href="#exit-status"><span class="octicon octicon-link"></span></a>Exit status</h2>
 
 <ul>
 <li>0: Markup is valid and no 404 found.</li>
 <li>64: Not valid markup found.</li>
 <li>65: There are pages not found.</li>
 <li>66: There are not valid markup and pages not found.</li>
-</ul><h1>On your application</h1>
+</ul>
 
-<div class="highlight"><pre>  <span class="nb">require</span> <span class="s1">'validate_website/validator'</span>
+<h2>
+<a name="on-your-application" class="anchor" href="#on-your-application"><span class="octicon octicon-link"></span></a>On your application</h2>
+
+<div class="highlight highlight-ruby"><pre>  <span class="nb">require</span> <span class="s1">'validate_website/validator'</span>
   <span class="n">body</span> <span class="o">=</span> <span class="s1">'&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;/html&gt;'</span>
   <span class="n">v</span> <span class="o">=</span> <span class="no">ValidateWebsite</span><span class="o">::</span><span class="no">Validator</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">body</span><span class="p">),</span> <span class="n">body</span><span class="p">)</span>
   <span class="n">v</span><span class="o">.</span><span class="n">valid?</span> <span class="c1"># =&gt; false</span>
 </pre></div>
 
-<h1>With RSpec</h1>
+<h2>
+<a name="jekyll-static-site-validation" class="anchor" href="#jekyll-static-site-validation"><span class="octicon octicon-link"></span></a>Jekyll static site validation</h2>
 
-<p>On spec/spec_helper.rb:</p>
+<p>You can add this Rake task to validate a
+<a href="https://github.com/jekyll/jekyll">jekyll</a> site:</p>
 
-<div class="highlight"><pre>  <span class="nb">require</span> <span class="s1">'validate_website/validator'</span>
-  <span class="nb">require</span> <span class="s1">'validate_website/rspec'</span>
-</pre></div>
-
-<p>On your spec/controllers:</p>
-
-<div class="highlight"><pre>  <span class="n">it</span> <span class="s1">'should be valid'</span> <span class="k">do</span>
-    <span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">should</span> <span class="n">be_w3c_valid</span>
+<div class="highlight highlight-ruby"><pre><span class="n">desc</span> <span class="s1">'validate _site with validate website'</span>
+<span class="n">task</span> <span class="ss">:validate</span> <span class="o">=&gt;</span> <span class="ss">:build</span> <span class="k">do</span>
+  <span class="no">Dir</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">'_site'</span><span class="p">)</span> <span class="k">do</span>
+    <span class="nb">system</span><span class="p">(</span><span class="s2">"validate-website-static --site '&lt;CONFIG_URL&gt;'"</span><span class="p">)</span>
+    <span class="nb">exit</span><span class="p">(</span><span class="vg">$?</span><span class="o">.</span><span class="n">exitstatus</span><span class="p">)</span>
   <span class="k">end</span>
+<span class="k">end</span>
 </pre></div>
 
-<h1>REQUIREMENTS</h1>
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <p>See <code>validate-website.gemspec</code> file.</p>
 
-<h1>CREDITS</h1>
+<h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
 
 <ul>
 <li>Thanks tenderlove for Nokogiri, this tool is inspired from markup_validity.</li>
-<li>And Chris Kite for Anemone web-spider framework.</li>
-</ul><h1>MORE INFO</h1>
+<li>And Chris Kite for Anemone web-spider framework and postmodern for Spidr.</li>
+</ul>
+
+<h2>
+<a name="more-info" class="anchor" href="#more-info"><span class="octicon octicon-link"></span></a>More info</h2>
 
 <p>The HTML5 support is done by using the Validator.nu Web Service, so the content
 of your webpage is logged by a tier. It's not the case for other validation
@@ -140,24 +128,46 @@ because validate-website use the XML Schema or DTD stored on the data/ directory
 <p>Please read <a href="http://about.validator.nu/#tos">http://about.validator.nu/#tos</a> for more info on the HTML5
 validation service.</p>
 
-<h1>CONTRIBUTORS</h1>
+<h2>
+<a name="contributors" class="anchor" href="#contributors"><span class="octicon octicon-link"></span></a>Contributors</h2>
 
 <ul>
 <li>François de Metz (francois2metz)</li>
 <li>Bruno Michel (nono)</li>
 <li>Matt Brictson (mbrictson)</li>
-</ul><h1>LICENSE</h1>
+</ul>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>The MIT License</p>
 
-<p>Copyright (c) 2009-2013 Laurent Arnoud <a href="mailto:laurent@spkdev.net">laurent@spkdev.net</a></p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/spk">spk</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<p>Copyright (c) 2009-2014 Laurent Arnoud <a href="mailto:laurent@spkdev.net">laurent@spkdev.net</a></p>
+
+<hr>
+
+<p><a href="https://rubygems.org/gems/validate-website"><img src="https://badge.fury.io/rb/validate-website.svg" alt="Gem Version"></a>
+<a href="https://travis-ci.org/spk/validate-website"><img src="https://secure.travis-ci.org/spk/validate-website.svg?branch=master" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/spk/validate-website"><img src="http://img.shields.io/codeclimate/github/spk/validate-website.svg" alt="Code Climate"></a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/spk/validate-website/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/spk/validate-website/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/spk/validate-website"></a> is maintained by <a href="https://github.com/spk">spk</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+  
   </body>
 </html>
